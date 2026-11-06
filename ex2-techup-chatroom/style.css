@@ -1,1 +1,100 @@
 /* Start coding here */
+body {
+  margin: 0;
+}
+
+/* ===== Header ===== */
+.header {
+  height: 60px;
+  padding-left: 10px;
+  background-color: grey;
+}
+
+.header-title {
+  margin: 0;
+  font-size: 32px;
+  font-weight: normal;
+  line-height: 60px;
+  color: white;
+}
+
+/* ===== Chatroom ===== */
+.chatroom {
+  padding: 35px 20px;
+}
+
+.message {
+  position: relative; /* จุดอ้างอิงให้ปุ่ม x และหางข้อความ */
+  box-sizing: border-box;
+  width: 210px;
+  height: 44px;
+  margin-bottom: 10px;
+  padding: 0 15px;
+  border-radius: 22px;
+  font-size: 16px;
+  line-height: 44px;
+}
+
+/* ข้อความของเรา ชิดขวา */
+.message-mine {
+  margin-left: auto;
+}
+
+.message-green {
+  background-color: rgb(10, 190, 10);
+}
+
+.message-light {
+  background-color: rgb(230, 226, 225);
+}
+
+/* ข้อความของอีกฝั่ง ชิดซ้าย */
+.message-other {
+  background-color: grey;
+}
+
+/* ===== หางของกล่องข้อความสีเขียว (มุมขวาบน) ===== */
+/* ใช้วงกลม 2 อันซ้อนกัน:
+   ::before = วงกลมสีเขียว ทำเป็นตัวหาง
+   ::after  = วงกลมสีขาว (สีพื้นหลัง) วางทับ เพื่อเจาะให้หางโค้งเว้า */
+.message-tail::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -6px;
+  width: 20px;
+  height: 20px;
+  background-color: rgb(10, 190, 10);
+  border-top-left-radius: 16px 14px;
+}
+
+.message-tail::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -10px;
+  width: 10px;
+  height: 20px;
+  background-color: white;
+  border-top-left-radius: 10px;
+}
+
+/* ===== ปุ่ม x วางทับกล่องข้อความสีเทาอ่อน ===== */
+.close-button {
+  position: absolute;
+  top: 2px;
+  right: -4px;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background-color: rgb(190, 190, 190);
+  color: white;
+  font-family: serif;
+  font-size: 12px;
+  font-style: italic;
+  line-height: 20px;
+  text-align: center;
+  cursor: pointer;
+}
