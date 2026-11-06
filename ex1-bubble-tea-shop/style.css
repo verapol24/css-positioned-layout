@@ -3,3 +3,55 @@ body {
 }
 
 /* Start coding here */
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* กล่องการ์ด: เป็นจุดอ้างอิง (containing block) ให้ลูกที่ position: absolute */
+.card {
+  position: relative;
+  padding: 8px;
+  background-color: white;
+}
+
+.card-image {
+  display: block;
+  border-radius: 8px;
+}
+
+/* แถบไล่สีดำด้านล่างรูป ช่วยให้ตัวหนังสือสีขาวอ่านง่าย */
+.card-overlay {
+  position: absolute;
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  height: 40%;
+  border-radius: 0 0 8px 8px;
+  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.8));
+}
+
+/* ชื่อร้าน มุมซ้ายล่าง (z-index ให้อยู่เหนือ overlay) */
+.card-title {
+  position: absolute;
+  left: 16px;
+  bottom: 14px;
+  z-index: 1;
+  color: white;
+  font-size: 24px;
+}
+
+/* ป้ายสถานที่ มุมขวาบน */
+.card-tag {
+  position: absolute;
+  top: 29px;
+  right: 4px;
+  padding: 10px 23px;
+  color: white;
+  font-size: 24px;
+  background-color: rgba(100, 100, 100, 0.8);
+}
